@@ -75,7 +75,7 @@ p{
   font-size: 1.5em;
 }
 
-p.main{
+div.main{
   padding: 30px 0px 0px 0px;
 }
 
@@ -92,4 +92,32 @@ p.main{
   top: 0px;
   z-index: 999;
   width: 100%;
+}
+
+//Mobile
+@media only screen and (max-width: 768px) {
+  h1{
+    padding: 40px 0px 0px 0px;
+    font-size: 3em;
+  }
+  .main-pic{
+    padding: 10px 0px;
+    width: 100px;
+  }
+  p, p.main{
+    padding: 0px;
+    text-align: justify;
+  }
+  .home-content{
+    top: 0px;
+  }
+  .view-animate-container{
+    @include background-image(linear-gradient(to bottom, #042037, #003A23));
+    height: 650px;
+    overflow: hidden;
+  }
+  #canvas-container{
+    display: none;
+    color: #2A4F6E;
+  }
 }

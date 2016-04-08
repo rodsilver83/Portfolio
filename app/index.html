@@ -33,7 +33,7 @@
             </button>
 
             <a class="navbar-brand" href="#/">
-              <strong>Rodrigo Soria</strong>
+              <strong class="hidden-xs">Rodrigo Soria</strong>
               <span class="developer-title">Front-end Developer</span>
             </a>
           </div>
@@ -41,7 +41,7 @@
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav navbar-right" ng-controller="MenuCtrl">
-              <li ng-class="{ active: activeLink == 'Home'}" ng-click="go('')"><a href="#/">Home</a></li>
+              <li ng-class="{ active: activeLink == 'Home'}" ng-click="go('Home')"><a href="#/">Home</a></li>
               <li ng-class="{ active: activeLink == 'About'}" ng-click="go('About')"><a ng-href="#/about">About</a></li>
               <li ng-class="{ active: activeLink == 'Portfolio'}" ng-click="go('Portfolio')"><a ng-href="#/Portfolio">Portfolio</a></li>
               <li ng-class="{ active: activeLink == 'Contact'}" ng-click="go('Contact')"><a ng-href="#/Contact">Contact</a></li>

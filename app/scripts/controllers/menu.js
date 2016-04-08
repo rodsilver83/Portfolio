@@ -10,12 +10,12 @@
 angular.module('portfolioApp')
   .controller('MenuCtrl', function ($scope) {
 
-    $scope.activeLink = '';
+    $scope.activeLink = 'Home';
     var goAboutInterval = null;
     $scope.go = function(link){
       $scope.activeLink = link;
       T = 0;
-      goAboutInterval = setInterval(speedParticlesX,20);
+      goAboutInterval = setInterval(speedParticlesX,24);
     };
 
     var canvas = document.getElementById("canvas-element");
@@ -23,23 +23,23 @@ angular.module('portfolioApp')
     var context = canvas.getContext("2d");
 
     var particles = [];
-    var dots = Math.floor(window.innerWidth/8);
+    var dots = Math.floor(window.innerWidth/10);
 
     var MAX_VEL = 0.3;
     var MIN_VEL = 0.01;
 
-    var MAX_DISTANCE = 100;//px
+    var MAX_DISTANCE = 150;//px
     var WINDOW_OFFSET = 50;//px
 
     var CONST_VY = -0.4;
     var CONST_VX = -0.0;
-    var MAX_CONST_VX = -10.0;
+    var MAX_CONST_VX = -15.0;
 
     var DOT_COLOR = "#2A4F6E";
     var START_GRADIENT = "#042037";
     var END_GRADIENT = "#003A23";
 
-    var DOT_GROW_SIZE = 0.8;
+    var DOT_GROW_SIZE = 0.5;
     initCanvas();
     
     var date = new Date();
@@ -145,8 +145,11 @@ angular.module('portfolioApp')
 
     function drawLine(p1,p2) {
       context.moveTo(p1.x,p1.y);
+      //context.strokeStyle = DOT_COLOR;
+      //0.164 0.309 0.431 1
+      var alpha = 1 - (distanceBetweenDots(p1,p2) / MAX_DISTANCE);
+      context.strokeStyle = "rgba(42, 79, 110, "+alpha+")";
       context.lineTo(p2.x,p2.y);
-      context.strokeStyle = DOT_COLOR;
       context.stroke();
     }
 
