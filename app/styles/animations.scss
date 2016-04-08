@@ -1,0 +1,36 @@
+@import "compass/css3";
+
+.view-animate-container {
+  position:relative;
+  height:100%;
+}
+
+.view-animate {
+  padding:10px;
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+  @include transition-property(all);
+  @include transition-duration(1.5s);
+  @include transition-timing-function(ease-in);
+
+  display:block;
+  width:100%;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:10px;
+}
+
+.view-animate.ng-enter {
+  left:100%;
+}
+.view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.view-animate.ng-leave.ng-leave-active {
+  left:-100%;
+}

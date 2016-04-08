@@ -1,0 +1,95 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+$main-bg: #042037;
+$header-fg: #dff2e1;
+
+$navbar-default-bg: $main-bg;
+$navbar-default-brand-color: #5A7C5A;
+$navbar-default-link-color: $header-fg;
+$navbar-default-link-active-color: #e0e0e0;
+$navbar-default-link-hover-color: #dff2e1;
+
+$navbar-border-radius: 0px;
+$navbar-margin-bottom: 0px;
+
+$text-color: $header-fg;
+
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import "compass";
+@import "animations";
+
+@font-face {
+  src: url("../styles/fonts/Quicksand-Bold.svg") format('svg'), url("../styles/fonts/quicksand-bold-webfont.ttf") format('truetype');
+  font-family: "Quicksand";
+  font-weight: bold;
+}
+
+@font-face {
+  src: url("../styles/fonts/Quicksand-Regular.svg") format('svg'), url("../styles/fonts/quicksand-regular-webfont.ttf") format('truetype');
+  font-family: "Quicksand";
+  font-weight: normal;
+}
+
+@font-face {
+  src: url("../styles/fonts/Quicksand-Italic.svg") format('svg'), url("../styles/fonts/quicksand-italic-webfont.ttf") format('truetype');
+  font-family: "Quicksand";
+  font-style: italic;
+  font-weight: normal;
+}
+
+a:focus, a:active, a:link, a:hover{
+  outline: 0;
+}
+
+.developer-title{
+  color: #AA5B39;
+}
+
+.navbar-brand > strong{
+  color: #5A7C5A;
+  border-right: 1px solid #7D6314;
+  margin-right: 5px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+}
+
+#canvas-container{
+  position: absolute;
+}
+
+h1{
+  font-weight: lighter;
+  font-size: 4em;
+  padding: 100px 0px 20px 0px;
+}
+
+.main-pic{
+  padding: 30px 0px;
+}
+
+p{
+  font-weight: 200;
+  font-size: 1.5em;
+}
+
+p.main{
+  padding: 30px 0px 0px 0px;
+}
+
+.home-content{
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  color: #dff2e1;
+}
+
+.header{
+  position: fixed;
+  top: 0px;
+  z-index: 999;
+  width: 100%;
+}
