@@ -16,6 +16,7 @@ angular.module('portfolioApp')
       $scope.activeLink = link;
       T = 0;
       goAboutInterval = setInterval(speedParticlesX,24);
+      END_GRADIENT = "#ffffff";
     };
 
     var canvas = document.getElementById("canvas-element");
@@ -33,22 +34,24 @@ angular.module('portfolioApp')
 
     var CONST_VY = -0.4;
     var CONST_VX = -0.0;
-    var MAX_CONST_VX = -15.0;
+    var MAX_CONST_VX = -5.0;
 
     var DOT_COLOR = "#2A4F6E";
     var START_GRADIENT = "#042037";
     var END_GRADIENT = "#003A23";
 
     var DOT_GROW_SIZE = 0.5;
-    initCanvas();
+    if(window.innerWidth >= 992){
+      initCanvas();
+    }
     
     var date = new Date();
 
     var T = 0;
     function speedParticlesX(){
       T+=20;
-      var ease = easeInOutQuad(T,0,1,1000);
-      if(ease < 0){
+      var ease = easeInOutQuad(T,0,1,2000);
+      if(ease < 0) {
         clearInterval(goAboutInterval);
         CONST_VX = 0;
       }else{
@@ -69,6 +72,11 @@ angular.module('portfolioApp')
       if (t < 1) return c/2*t*t + b;
       t--;
       return -c/2 * (t*(t-2) - 1) + b;
+    };
+
+    function easeInQuad(t, b, c, d) {
+      t /= d;
+      return c*t*t + b;
     };
 
     /**
@@ -112,7 +120,7 @@ angular.module('portfolioApp')
 
     function frameUpdate(){
       context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      fillCanvasGradient();
+      //fillCanvasGradient();
       for( var i = 0; i < particles.length; i++ ) {
         particles[i].size = 0;
         moveParticles(i);

@@ -4,7 +4,6 @@
 
   .view-animate-container {
     position: relative;
-    height: 100%;
   }
 
   .view-animate {
@@ -12,8 +11,8 @@
   }
 
   .view-animate.ng-enter, .view-animate.ng-leave {
-    @include transition-property(all);
-    @include transition-duration(1.5s);
+    @include transition-property(opacity);
+    @include transition-duration(1s);
     @include transition-timing-function(ease-in);
 
     display: block;
@@ -28,13 +27,18 @@
   }
 
   .view-animate.ng-enter {
-    left: 100%;
+    left: 0;
+    opacity: 0;
   }
   .view-animate.ng-enter.ng-enter-active {
     left: 0;
+    opacity: 1;
+    //@include transition-delay(4s);
+    @include transition-delay(0s);
   }
   .view-animate.ng-leave.ng-leave-active {
-    left: -100%;
+    left: 0;
+    opacity: 0;
   }
 
 }

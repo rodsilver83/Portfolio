@@ -1,7 +1,7 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
 $main-bg: #042037;
-$header-fg: #dff2e1;
+$header-fg: lighten(#dff2e1,6%);
 
 $navbar-default-bg: $main-bg;
 $navbar-default-brand-color: #5A7C5A;
@@ -14,12 +14,16 @@ $navbar-margin-bottom: 0px;
 
 $text-color: $header-fg;
 
+$dark-color: darken(#5A7C5A,10%);;
+$dark-color-secondary: #AA5B39;
+
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
 @import "compass";
 @import "animations";
+@import "puzzle";
 
 @font-face {
   src: url("../styles/fonts/Quicksand-Bold.svg") format('svg'), url("../styles/fonts/quicksand-bold-webfont.ttf") format('truetype');
@@ -49,7 +53,7 @@ a:focus, a:active, a:link, a:hover{
 }
 
 .navbar-brand > strong{
-  color: #5A7C5A;
+  color: $dark-color;
   border-right: 1px solid #7D6314;
   margin-right: 5px;
   padding-right: 10px;
@@ -64,6 +68,10 @@ h1{
   font-weight: lighter;
   font-size: 4em;
   padding: 100px 0px 20px 0px;
+}
+
+.section-title{
+  padding-bottom: 60px;
 }
 
 .main-pic{
@@ -94,6 +102,44 @@ div.main{
   width: 100%;
 }
 
+.about-me > .row:first-child{
+  background: transparent;
+}
+
+.about-me > .row:nth-child(2){
+  background: $header-fg;
+  color: $dark-color;
+  padding: 0px;
+  border-bottom: 1px solid darken($header-fg,10%);
+}
+
+.about-me > .row:nth-child(3){
+  background: darken($header-fg,2%);
+  color: $dark-color;
+  padding: 40px 0px;
+  border-top: 1px solid lighten($header-fg,10%);
+
+}
+
+.about-me > .row:nth-child(4){
+  padding: 40px 0px 0px 0px;
+}
+
+.about-me{
+  height: 0px;
+  overflow: auto;
+}
+
+.puzzle-text{
+  padding: 20px 40px 40px;
+  background: $header-fg;
+}
+
+
+#canvas-container{
+  @include background-image(linear-gradient(to bottom, $main-bg, #003A23));
+}
+
 //Mobile
 @media only screen and (max-width: 768px) {
   h1{
@@ -116,8 +162,28 @@ div.main{
     height: 650px;
     overflow: hidden;
   }
-  #canvas-container{
-    display: none;
-    color: #2A4F6E;
+}
+
+//Tablet
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  h1{
+    padding: 40px 0px 0px 0px;
+    font-size: 3em;
+  }
+  .main-pic{
+    padding: 10px 0px;
+    width: 100px;
+  }
+  p, p.main{
+    padding: 0px;
+    text-align: justify;
+  }
+  .home-content{
+    top: 0px;
+  }
+  .view-animate-container{
+    @include background-image(linear-gradient(to bottom, #042037, #003A23));
+    min-height: 1000px;
+    overflow: hidden;
   }
 }
