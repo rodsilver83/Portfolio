@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39ec78d4-ad3a-4fe4-8737-3844e16e7824" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/images/about/ojo en el cielo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/images/about/palma.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/images/about/quotes.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.scss" afterPath="$PROJECT_DIR$/app/styles/main.scss" />
@@ -28,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="168" column="3" selection-start-line="168" selection-start-column="3" selection-end-line="168" selection-end-column="3" />
+            <state relative-caret-position="15">
+              <caret line="200" column="2" selection-start-line="200" selection-start-column="2" selection-end-line="200" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -41,12 +38,12 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="114" column="19" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
+            <state relative-caret-position="396">
+              <caret line="102" column="42" selection-start-line="102" selection-start-column="42" selection-end-line="102" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1460484828000" expanded="true" signature="565:716" placeholder="..." />
-                <marker date="1460484828000" expanded="true" signature="658:684" placeholder="..." />
+                <marker date="1460501019000" expanded="true" signature="565:716" placeholder="..." />
+                <marker date="1460501019000" expanded="true" signature="658:684" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -62,7 +59,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="quotes.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="quotes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/quotes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -140,9 +137,9 @@
         <option value="$PROJECT_DIR$/bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss" />
         <option value="$PROJECT_DIR$/app/scripts/rsMain.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/portfolio.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/quotes.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/styles/main.scss" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/quotes.js" />
       </list>
     </option>
   </component>
@@ -188,7 +185,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="859" />
+    <option name="width" value="958" />
     <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -586,20 +583,20 @@
       <workItem from="1459983584168" duration="72892000" />
       <workItem from="1460408769109" duration="10000" />
       <workItem from="1460408904755" duration="335000" />
-      <workItem from="1460409367618" duration="13506000" />
+      <workItem from="1460409367618" duration="21133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87356000" />
+    <option name="totallyTimeSpent" value="94983000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="859" height="1200" extended-state="6" />
+    <frame x="0" y="0" width="958" height="1200" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.250918" sideWeight="0.47235578" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22379912" sideWeight="0.47235578" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.250918" sideWeight="0.5276442" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22379912" sideWeight="0.5276442" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23460145" sideWeight="0.51310045" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2477396" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -640,8 +637,8 @@
           <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1460484828000" expanded="true" signature="565:716" placeholder="..." />
-            <marker date="1460484828000" expanded="true" signature="658:684" placeholder="..." />
+            <marker date="1460501019000" expanded="true" signature="565:716" placeholder="..." />
+            <marker date="1460501019000" expanded="true" signature="658:684" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -670,8 +667,8 @@
           <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1460484828000" expanded="true" signature="565:716" placeholder="..." />
-            <marker date="1460484828000" expanded="true" signature="658:684" placeholder="..." />
+            <marker date="1460501019000" expanded="true" signature="565:716" placeholder="..." />
+            <marker date="1460501019000" expanded="true" signature="658:684" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -700,8 +697,8 @@
           <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1460484828000" expanded="true" signature="565:716" placeholder="..." />
-            <marker date="1460484828000" expanded="true" signature="658:684" placeholder="..." />
+            <marker date="1460501019000" expanded="true" signature="565:716" placeholder="..." />
+            <marker date="1460501019000" expanded="true" signature="658:684" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -992,30 +989,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/quotes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="114" column="19" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
+        <state relative-caret-position="396">
+          <caret line="102" column="42" selection-start-line="102" selection-start-column="42" selection-end-line="102" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1460484828000" expanded="true" signature="565:716" placeholder="..." />
-            <marker date="1460484828000" expanded="true" signature="658:684" placeholder="..." />
+            <marker date="1460501019000" expanded="true" signature="565:716" placeholder="..." />
+            <marker date="1460501019000" expanded="true" signature="658:684" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="168" column="3" selection-start-line="168" selection-start-column="3" selection-end-line="168" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/quotes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        <state relative-caret-position="15">
+          <caret line="200" column="2" selection-start-line="200" selection-start-column="2" selection-end-line="200" selection-end-column="2" />
           <folding />
         </state>
       </provider>

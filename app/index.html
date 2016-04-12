@@ -85,7 +85,7 @@
   <div class="row">
     <a name="about-me"></a>
     <div class="col-xs-12 col-sm-6 about-me">
-      <h1 class="text-center about-title">About Me</h1>
+      <h1 class="text-center title">About Me</h1>
       <h2 class="hidden-xs hidden-sm">Front-end Developer</h2>
       <p>
         I enjoy turning complex problems into simple tasks.
@@ -101,7 +101,7 @@
       </p>
     </div>
     <div class="col-xs-12 col-sm-6 meditation" ng-controller="QuotesCtrl">
-      <h1 class="text-center about-title">FAV QUOTES</h1>
+      <h1 class="text-center title">FAV QUOTES</h1>
       <blockquote class="blockquote-reverse">
       <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis delectus distinctio eaque facilis impedit iure laboriosam, maiores mollitia nulla numquam officia omnis quas quasi quis reiciendis, repudiandae unde vero voluptas.
       </p>
@@ -111,9 +111,48 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 text-center charts">
-      <h1>My Skills</h1>
-      <div class="chart-container"></div>
+    <div class="col-xs-12 text-center charts visible-sm visible-md visible-lg">
+      <h1 class="title">My Skills</h1>
+      <div class="chart-container">
+        <ul id="bar-chart">
+          <li class="bar-a">
+            <div class="bar">
+              <div class="percent">95%</div>
+              <div class="skill-title">HTML / CSS</div>
+            </div>
+          </li>
+          <li class="bar-b">
+            <div class="bar">
+              <div class="percent">90%</div>
+              <div class="skill-title">Angular</div>
+            </div>
+          </li>
+          <li class="bar-c">
+            <div class="bar">
+              <div class="percent">95%</div>
+              <div class="skill-title">Javascript</div>
+            </div>
+          </li>
+          <li class="bar-d">
+            <div class="bar">
+              <div class="percent">80%</div>
+              <div class="skill-title">MEAN Stak</div>
+            </div>
+          </li>
+          <li class="bar-e">
+            <div class="bar">
+              <div class="percent">85%</div>
+              <div class="skill-title">Tea Drinking</div>
+            </div>
+          </li>
+          <li class="bar-f">
+            <div class="bar">
+              <div class="percent">40%</div>
+              <div class="skill-title">Karaoke</div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
