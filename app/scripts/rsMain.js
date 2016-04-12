@@ -3,5 +3,7 @@
  */
 
 $(document).ready(function(){
-  $(".about-me").css("height",window.innerHeight);
+  $(".main-container").css("height",window.innerHeight);
+  $(".home-container").css("height",window.innerHeight - 52);
+  $("#canvas-container").css("height",window.innerHeight);
 });

@@ -1,96 +1,135 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="portfolioApp">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="portfolioApp" ng-controller="PortfolioCtrl">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+<!-- Add your site or application content here -->
+<div class="header">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#/">
+          <strong class="hidden-xs">Rodrigo Soria</strong>
+          <span class="developer-title">Front-end Developer</span>
+        </a>
+      </div>
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-class="{ active: activeLink == 'Home'}" ng-click="go('Home')"><a href="#/">Home</a></li>
+          <li ng-class="{ active: activeLink == 'About'}" ng-click="go('About')"><a href="#about-me">About</a></li>
+          <li ng-class="{ active: activeLink == 'Portfolio'}" ng-click="go('Portfolio')"><a ng-href="#/Portfolio">Portfolio</a>
+          </li>
+          <li ng-class="{ active: activeLink == 'Contact'}" ng-click="go('Contact')"><a ng-href="#/Contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <a class="navbar-brand" href="#/">
-              <strong class="hidden-xs">Rodrigo Soria</strong>
-              <span class="developer-title">Front-end Developer</span>
-            </a>
-          </div>
+<div id="canvas-container">
+  <canvas class="hidden-xs hidden-sm" id="canvas-element" style="display: inline;">
+    Your browser does not support the Canvas element.
+  </canvas>
+</div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+<div class="container-fluid main-container">
+  <div class="home-container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1>Rodrigo Soria</h1>
+        <img class="main-pic" src="/images/circle_pic.png" width="200px">
+      </div>
+    </div>
 
-            <ul class="nav navbar-nav navbar-right" ng-controller="MenuCtrl">
-              <li ng-class="{ active: activeLink == 'Home'}" ng-click="go('Home')"><a href="#/">Home</a></li>
-              <li ng-class="{ active: activeLink == 'About'}" ng-click="go('About')"><a ng-href="#/about">About</a></li>
-              <li ng-class="{ active: activeLink == 'Portfolio'}" ng-click="go('Portfolio')"><a ng-href="#/Portfolio">Portfolio</a></li>
-              <li ng-class="{ active: activeLink == 'Contact'}" ng-click="go('Contact')"><a ng-href="#/Contact">Contact</a></li>
-            </ul>
-          </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col col-lg-offset-2 text-center">
+        <div class="main-desc">
+          <p>
+            I'm a Front-end Developer with some Back-end in me. When I'm not freelancing, I'm working on projects for
+            clients all
+            over the world. I spend my free time creating new levels for my IOS game.
+          </p>
+          <br>
+          <p>
+            I have a various set of skills, from HTML + CSS + Javascript, to Node.js, PHP,
+            Git deployment and Linux server administration to name a few.
+          </p>
         </div>
       </div>
     </div>
 
-    <div id="canvas-container" class="hidden-xs">
-      <canvas id="canvas-element" width="100" height="100" style="display: inline;">
-        Your browser does not support the Canvas element.
-      </canvas>
+    <div class="down-circle">
+      <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
     </div>
+  </div>
 
-    <div class="view-animate-container">
-      <div ng-view="" class="view-animate"></div>
+  <div class="row">
+    <a name="about-me"></a>
+    <div class="col-xs-12 col-sm-12 col-lg-6 about-me">
+      <h1 class="text-center about-title">About Me</h1>
+      <h2 class="hidden-xs hidden-sm">Front-end Developer</h2>
+      <p>
+        I enjoy turning complex problems into simple tasks.
+      </p>
+      <p>
+        I'm coding most of the time, or playing videogames, you'll find me in the gym from time to time.
+      </p>
+      <p>
+        I like a challenge when it comes to learn new technologies, tools, or new ways to design, always looking for the next best way to code.
+      </p>
     </div>
+  </div>
+</div>
 
-    <!--Footer-->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<!--Footer-->
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+  !function (A, n, g, u, l, a, r) {
+    A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+          (A[l].q = A[l].q || []).push(arguments)
+        }, A[l].l = +new Date, a = n.createElement(g),
+        r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+  }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+</script>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/menu.js"></script>
-    <script src="scripts/controllers/contact.js"></script>
-    <script src="scripts/controllers/portfolio.js"></script>
-    <!-- endbuild -->
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/portfolio.js"></script>
+<script src="scripts/rsMain.js"></script>
+<!-- endbuild -->
 </body>
 </html>
