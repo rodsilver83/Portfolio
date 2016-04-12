@@ -17,6 +17,15 @@ $text-color: $header-fg;
 $dark-color: darken(#5A7C5A,10%);;
 $dark-color-secondary: #AA5B39;
 
+$about-me-height: 550px;
+
+$default-text-shadow-color: rgba(0, 0, 0, 1);
+$default-text-shadow-blur: 4px;
+$default-text-shadow-v-offset: 1px;
+
+$blockquote-small-color: darken($header-fg,10%);
+$blockquote-border-color: $header-fg;
+
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
@@ -120,6 +129,12 @@ p{
 .about-me{
   background: $header-fg;
   color: $dark-color;
+  padding: 0px 40px 40px 40px;
+  height: $about-me-height;
+}
+
+.about-title{
+  margin: 50px 0;
 }
 
 .down-circle{
@@ -144,12 +159,34 @@ p{
   }
 }
 
+.meditation{
+  background: url("/images/about/quotes.jpg") no-repeat scroll 50% 50%;
+
+  height: $about-me-height;
+  padding: 0px 40px 40px 40px;
+
+  blockquote {
+    p {
+      @include single-text-shadow;
+    }
+  }
+}
+
+blockquote.blockquote-reverse{
+  border: none;
+  padding: 0px;
+}
+
+cite{
+  @include single-text-shadow;
+}
+
+//Animations
 @include keyframes(floating){
-  0%, 100%{
+  0%{
     bottom: 25px;
   }
   50%{
     bottom: 40px;
   }
 }
-
