@@ -27,16 +27,14 @@ $default-text-shadow-v-offset: 1px;
 $blockquote-small-color: darken($header-fg, 10%);
 $blockquote-border-color: $header-fg;
 
-// bower:scss
+$modal-content-bg: $header-fg;
+
+  // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
 @import "compass";
 @import "compass/css3/animation";
-//@import "animations";
-//@import "puzzle";
-//@import "home";
-//@import "responsive";
 
 @font-face {
   src: url("../styles/fonts/Quicksand-Bold.svg") format('svg'), url("../styles/fonts/quicksand-bold-webfont.ttf") format('truetype');
@@ -55,6 +53,14 @@ $blockquote-border-color: $header-fg;
   font-family: "Quicksand";
   font-style: italic;
   font-weight: normal;
+}
+
+*, body{
+  font-family: "Quicksand";
+}
+
+h4{
+  color: $dark-color;
 }
 
 a:focus, a:active, a:link, a:hover {
@@ -192,7 +198,7 @@ cite {
 
 .chart-container {
   height: 400px;
-  margin: 0px 0px 40px;
+  margin: 0px 0px 100px;
   padding: 0px;
 }
 
@@ -200,24 +206,42 @@ ul#bar-chart {
   padding: 0px;
   margin: 0px;
   list-style: none;
-  border-bottom: 1px solid $header-fg;
+  border-bottom: 1px solid #eee;
+  height: 335px;
   li {
+    display: inline-block;
+  }
+
+  .bar {
+    padding: 10px;
+    border-radius: 5px 5px 0px 0px;
+    vertical-align: bottom;
     display: inline-block;
   }
 }
 
-.bar {
-  padding: 10px;
-  border-radius: 5px 5px 0px 0px;
-  vertical-align: bottom;
-  display: inline-block;
+ul#bar-chart-title-axis {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  height: 50px;
+  li {
+    display: inline-block;
+  }
+
+  .bar {
+    padding: 10px;
+    border-radius: 0px 0px 5px 5px;
+    vertical-align: bottom;
+    display: inline-block;
+  }
 }
 
 //Bar Mixing
+$chart-max: 350px;
 @mixin chart-bar($color, $percent) {
-  $chart-max: 350px;
   $bar-a-color: $color;
-  margin: 0px 5px;
+  margin: 311px 5px 0px;
   border: 1px solid darken($bar-a-color, 10%);
   border-radius: 5px 5px 0px 0px;
   border-bottom: none;
@@ -225,44 +249,316 @@ ul#bar-chart {
   .bar {
     @include background-image(linear-gradient(to bottom, lighten($bar-a-color, 10%), darken($bar-a-color, 10%)));
 
-    height: $chart-max * $percent;
+    //height: $chart-max * $percent;
+    height: 20px;
     border-top: 1px solid lighten($bar-a-color, 30%);
+
+    @include transition-property(height);
+    @include transition-duration(1.5s);
+    @include transition-timing-function(ease);
 
     .percent, .skill-title {
       color: lighten($bar-a-color, 25%);
       width: 80px;
+      text-shadow: 0 1px 1px #333;
     }
   }
 }
 
 .bar-a {
-  @include chart-bar(#3B70A8, 0.95);
+  @include chart-bar(#3B70A8, 0.05);
+
+  @include transition-property(all);
+  @include transition-duration(1.5s);
+  @include transition-timing-function(ease);
 }
 
 .bar-b {
-  @include chart-bar(#E96725, 0.9);
+  @include chart-bar(#E96725, 0.05);
+  @include transition-property(all);
+  @include transition-duration(1.5s);
+  @include transition-timing-function(ease);
 }
 
 .bar-c {
-  @include chart-bar(#E99A25, 0.95);
+  @include chart-bar(#E99A25, 0.05);
+  @include transition-property(all);
+  @include transition-duration(1.5s);
+  @include transition-timing-function(ease);
 }
 
 .bar-d {
-  @include chart-bar(#199B70, 0.6);
+  @include chart-bar(#199B70, 0.05);
+  @include transition-property(all);
+  @include transition-duration(1.5s);
+  @include transition-timing-function(ease);
 }
 
 .bar-e {
-  @include chart-bar(#6A40B0, 0.85);
+  @include chart-bar(#6A40B0, 0.05);
+  @include transition-property(all);
+  @include transition-duration(1.5s);
+  @include transition-timing-function(ease);
 }
 
 .bar-f {
-  @include chart-bar(#e9d32c, 0.4);
+  @include chart-bar(#e9d32c, 0.05);
+  @include transition-property(all);
+  @include transition-duration(1.5s);
+  @include transition-timing-function(ease);
+}
+
+.start .bar-a {
+  margin: 0px 5px 0px;
+  .bar {
+    height: $chart-max * 0.95;
+  }
+}
+
+.start .bar-b {
+  margin: 0px 5px 0px;
+  .bar {
+    height: $chart-max * 0.90;
+  }
+}
+
+.start .bar-c {
+  margin: 0px 5px 0px;
+  .bar {
+    height: $chart-max * 0.95;
+  }
+}
+
+.start .bar-d {
+  margin: 0px 5px 0px;
+  .bar {
+    height: $chart-max * 0.6;
+  }
+}
+
+.start .bar-e {
+  margin: 0px 5px 0px;
+  .bar {
+    height: $chart-max * 0.85;
+  }
+}
+
+.start .bar-f {
+  margin: 0px 5px 0px;
+  .bar {
+    height: $chart-max * 0.40;
+  }
 }
 
 .percent {
   font-size: 2em;
   font-weight: bold;
+  opacity: 0;
+  @include transition-property(all);
+  @include transition-duration(1s);
+  @include transition-delay(0.5s);
+  @include transition-timing-function(ease);
 }
+
+.start .percent {
+  opacity: 1;
+}
+
+ul#bar-chart-title-axis {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  height: 50px;
+  li {
+    display: inline-block;
+  }
+}
+
+@mixin chart-bar-title($color) {
+  $bar-a-color: $color;
+  margin: 0px 5px;
+  border: 1px solid darken($bar-a-color, 10%);
+  border-radius: 0px 0px 5px 5px;
+  border-top: none;
+
+  .bar {
+    @include background-image(linear-gradient(to bottom, darken($bar-a-color, 10%), lighten($bar-a-color, 10%)));
+
+    height: 75px;
+    border-bottom: 1px solid lighten($bar-a-color, 30%);
+
+    .percent, .skill-title {
+      color: lighten($bar-a-color, 25%);
+      width: 80px;
+      text-shadow: 0 1px 1px #333;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+  }
+}
+
+.bar-a-title {
+  @include chart-bar-title(#3B70A8);
+}
+
+.bar-b-title {
+  @include chart-bar-title(#E96725);
+}
+
+.bar-c-title {
+  @include chart-bar-title(#E99A25);
+}
+
+.bar-d-title {
+  @include chart-bar-title(#199B70);
+}
+
+.bar-e-title {
+  @include chart-bar-title(#6A40B0);
+}
+
+.bar-f-title {
+  @include chart-bar-title(#e9d32c);
+}
+
+//Portfolio
+.portfolio{
+
+  $portfolio-cell-bg: lighten($main-bg,35%);
+
+  border-top: 1px solid darken($portfolio-cell-bg,25%);
+  background: darken($portfolio-cell-bg,10%);
+  color: $header-fg;
+  padding: 40px 0px;
+
+  .portfolio-gallery{
+    margin-top: 50px;
+  }
+  .cell{
+    height: 200px;
+    margin: 15px 0px;
+    background: $header-fg;
+    border-radius: 5px;
+    border: 1px solid darken($portfolio-cell-bg,20%);
+    padding: 20px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    img{
+      width: 150px;
+    }
+  }
+}
+
+//Modal
+.modal-title{
+  color: $header-fg;
+}
+
+.modal-body{
+  color: $dark-color;
+}
+
+.modal-header{
+  background: $dark-color;
+}
+
+.modal-full{
+  width: 90%;
+}
+
+.portfolio-mac {
+  background: rgba(0, 0, 0, 0) url("/images/portfolio/mac.png") no-repeat scroll 50% 50%;
+  display: flex;
+  height: 400px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+
+  .mac-pic {
+    height: 260px;
+    width: 455px;
+    overflow: hidden;
+    margin-top: 30px;
+
+    img {
+      width: 100%;
+      @include animation-timing-function(ease-in-out);
+      animation-play-state: paused;
+    }
+    img.scroll-1 {
+      animation: scrolling-1 15s infinite;
+    }
+    img.scroll-2 {
+      animation: scrolling-2 20s infinite;
+    }
+  }
+}
+
+.portfolio-iphone {
+  background: rgba(0, 0, 0, 0) url("/images/portfolio/iphone.png") no-repeat scroll 50% 50%;
+  display: flex;
+  height: 400px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+
+  .mac-pic {
+    height: 309px;
+    width: 175px;
+    overflow: hidden;
+    margin-top: 45px;
+
+    img {
+      width: 500%;
+      @include animation-timing-function(ease-in-out);
+      animation-play-state: paused;
+    }
+    img.scroll-3 {
+      animation: scrolling-3 40s infinite;
+    }
+  }
+}
+
+.portfolio-iphone-landscape {
+  background: rgba(0, 0, 0, 0) url("/images/portfolio/iphone.png") no-repeat scroll 50% 50%;
+  display: flex;
+  height: 400px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+
+  .mac-pic {
+    height: 309px;
+    width: 175px;
+    overflow: hidden;
+    margin-top: 45px;
+
+    img {
+      width: 500%;
+      @include animation-timing-function(ease-in-out);
+      animation-play-state: paused;
+    }
+    img.scroll-3 {
+      animation: scrolling-3 40s infinite;
+    }
+  }
+}
+
+.in .mac-pic img {
+  animation-play-state: running;
+}
+
+/*
+.in .mac-pic img:hover {
+  animation-play-state: paused;
+}
+*/
 
 //Animations
 @include keyframes(floating) {
@@ -274,9 +570,47 @@ ul#bar-chart {
   }
 }
 
-.portfolio{
-  background: $header-fg;
-  color: $dark-color;
-  padding: 40px 20px;
-  border-top: 1px solid lighten($header-fg,10%);
+@include keyframes(scrolling-1) {
+  0%, 20%, 100% {
+    margin-top: 0px;
+  }
+  50%, 70% {
+    margin-top: -486px;
+  }
 }
+
+@include keyframes(scrolling-2) {
+  0%, 20%, 100% {
+    margin-top: 0px;
+  }
+  50%, 70% {
+    margin-top: -640px;
+  }
+}
+
+@include keyframes(scrolling-3) {
+  0%, 5%, 100%{
+    margin-left: 0px;
+  }
+  10%, 15%, 90%, 95%{
+    margin-left: -175px;
+  }
+  20%, 25%, 80%, 85%{
+    margin-left: -350px;
+  }
+  30%, 35%, 70%, 75%{
+    margin-left: -525px;
+  }
+  40%, 60%{
+    margin-left: -700px;
+  }
+}
+
+//Responsive queries
+
+@media screen and (max-width: 768px) {
+  .modal-dialog{
+    width: auto;
+  }
+}
+

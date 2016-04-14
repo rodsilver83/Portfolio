@@ -14,9 +14,15 @@ angular.module('portfolioApp')
     var goAboutInterval = null;
     $scope.go = function(link){
       $scope.activeLink = link;
-      T = 0;
-      goAboutInterval = setInterval(speedParticlesX,24);
-      END_GRADIENT = "#ffffff";
+      //T = 0;
+      //goAboutInterval = setInterval(speedParticlesX,24);
+      //END_GRADIENT = "#ffffff";
+
+      var target = $('[name=' + $scope.activeLink + ']');
+      $('html, body').animate({
+        scrollTop: (target.offset().top - 40)
+      }, 1500);
+
     };
 
     var canvas = document.getElementById("canvas-element");

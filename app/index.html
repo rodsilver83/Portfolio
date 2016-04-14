@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" sizes="144x144" href="/images/icon/apple-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="/images/icon/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/icon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/images/icon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/icon/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/images/icon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/icon/favicon-16x16.png">
@@ -36,6 +36,9 @@
   <!-- endfavicon -->
 </head>
 <body ng-app="portfolioApp" ng-controller="PortfolioCtrl">
+
+<a name="home"></a>
+
 <!--[if lte IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
@@ -54,11 +57,10 @@
 
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li ng-class="{ active: activeLink == 'Home'}" ng-click="go('Home')"><a href="#/">Home</a></li>
-          <li ng-class="{ active: activeLink == 'About'}" ng-click="go('About')"><a href="#about-me">About</a></li>
-          <li ng-class="{ active: activeLink == 'Portfolio'}" ng-click="go('Portfolio')"><a ng-href="#/Portfolio">Portfolio</a></li>
-          <li ng-class="{ active: activeLink == 'Portfolio'}" ng-click="go('Portfolio')"><a ng-href="#/AmazenInfinity">AmzInf</a></li>
-          <li ng-class="{ active: activeLink == 'Contact'}" ng-click="go('Contact')"><a ng-href="#/Contact">Contact</a></li>
+          <li ng-class="{ active: activeLink == 'Home'}" ng-click="go('home')"><a href="#/Home">Home</a></li>
+          <li ng-class="{ active: activeLink == 'About'}" ng-click="go('about')"><a href="#/About">About</a></li>
+          <li ng-class="{ active: activeLink == 'Portfolio'}" ng-click="go('portfolio')"><a ng-href="#/Portfolio">Portfolio</a></li>
+          <li ng-class="{ active: activeLink == 'Contact'}" ng-click="go('contact')"><a ng-href="#/Contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -104,10 +106,10 @@
 
   <!-- ABOUT ME -->
   <div class="row">
-    <a name="about-me"></a>
+    <a name="about"></a>
     <div class="col-xs-12 col-sm-6 about-me">
       <h1 class="text-center title">About Me</h1>
-      <h2 class="hidden-xs hidden-sm">Front-end Developer</h2>
+      <!--h2 class="hidden-xs hidden-sm">Front-end Developer</h2-->
       <p>
         I enjoy turning complex problems into simple tasks.
       </p>
@@ -115,17 +117,20 @@
         I'm coding most of the time, or playing videogames, you'll find me in the gym from time to time.
       </p>
       <p>
-        I like a challenge when it comes to learn new technologies, tools, or new ways to design, always looking for the next best way to code.
+        I like a challenge when it comes to learn new technologies, tools, or new ways to design, always looking for the
+        next best way to code.
       </p>
       <p>
         I love panda cubs, and puppies.
       </p>
     </div>
     <div class="col-xs-12 col-sm-6 meditation" ng-controller="QuotesCtrl">
-      <h1 class="text-center title">FAV QUOTES</h1>
+      <h1 class="text-center title">QUOTES</h1>
       <blockquote class="blockquote-reverse">
-      <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis delectus distinctio eaque facilis impedit iure laboriosam, maiores mollitia nulla numquam officia omnis quas quasi quis reiciendis, repudiandae unde vero voluptas.
-      </p>
+        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis delectus distinctio
+          eaque facilis impedit iure laboriosam, maiores mollitia nulla numquam officia omnis quas quasi quis
+          reiciendis, repudiandae unde vero voluptas.
+        </p>
         <cite>Source Title</cite>
       </blockquote>
     </div>
@@ -140,37 +145,63 @@
           <li class="bar-a">
             <div class="bar">
               <div class="percent">95%</div>
-              <div class="skill-title">HTML / CSS</div>
             </div>
           </li>
           <li class="bar-b">
             <div class="bar">
               <div class="percent">90%</div>
-              <div class="skill-title">Angular</div>
             </div>
           </li>
           <li class="bar-c">
             <div class="bar">
               <div class="percent">95%</div>
-              <div class="skill-title">Javascript</div>
             </div>
           </li>
           <li class="bar-d">
             <div class="bar">
               <div class="percent">60%</div>
-              <div class="skill-title">MEAN Stack</div>
             </div>
           </li>
           <li class="bar-e">
             <div class="bar">
               <div class="percent">85%</div>
-              <div class="skill-title">Tea Drinking</div>
             </div>
           </li>
           <li class="bar-f">
             <div class="bar">
               <div class="percent">40%</div>
-              <div class="skill-title">Karaoke</div>
+            </div>
+          </li>
+        </ul>
+        <ul id="bar-chart-title-axis">
+          <li class="bar-a-title">
+            <div class="bar">
+              <div class="skill-title">HTML / CSS</div>
+            </div>
+          </li>
+          <li class="bar-b-title">
+            <div class="bar">
+              <div class="skill-title">Angular</div>
+            </div>
+          </li>
+          <li class="bar-c-title">
+            <div class="bar">
+              <div class="skill-title">JS</div>
+            </div>
+          </li>
+          <li class="bar-d-title">
+            <div class="bar">
+              <div class="skill-title">MEAN Stack</div>
+            </div>
+          </li>
+          <li class="bar-e-title">
+            <div class="bar">
+              <div class="skill-title">Tea Drinking</div>
+            </div>
+          </li>
+          <li class="bar-f-title">
+            <div class="bar">
+              <div class="skill-title">Karaoke Singing</div>
             </div>
           </li>
         </ul>
@@ -180,13 +211,183 @@
 
   <!-- PORTFOLIO -->
   <div class="row">
+    <a name="portfolio"></a>
+
     <div class="col-xs-12 portfolio">
-      <h1 class="text-center">Portfolio</h1>
-      <div class=""></div>
+      <div class="container">
+        <h1 class="text-center">Portfolio</h1>
+
+
+        <div class="portfolio-gallery">
+          <div class="col-xs-6 col-sm-4 text-center">
+            <div class="cell" data-toggle="modal" data-target="#modal1">
+              <img src="images/portfolio/logo/trendyta.png">
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-4 text-center">
+            <div class="cell" data-toggle="modal" data-target="#modal2">
+              <img src="images/portfolio/logo/eurote.png">
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-4 text-center">
+            <div class="cell" data-toggle="modal" data-target="#modal3">
+              <img src="images/portfolio/logo/knowhow.png">
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-4 text-center">
+            <div class="cell" data-toggle="modal" data-target="#modal4">
+              <img src="images/portfolio/logo/amzinf.png">
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-4 text-center">
+            <div class="cell" data-toggle="modal" data-target="#modal5">
+              <img src="images/portfolio/logo/bpgurus.png">
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-4 text-center">
+            <div class="cell" data-toggle="modal" data-target="#modal6">
+              <img src="images/portfolio/logo/v147.png">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+  <div class="modal-dialog modal-full" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel1">Trendyta</h2>
+      </div>
+      <div class="modal-body">
+        <p>E-commerce platform made from ground up. With a backend service using sales data analytics, to improve seasonal-sale offers, top products, and key costumers.</p>
+        <p><strong>Key technologies:</strong> Angular, Bootstrap, Nginx, CodeIgniter, Ajax, AWS, SendGrid, D3, Git</p>
+        <div>
+          <a href="https://www.trendyta.com" target="_blank" class="btn btn-success">trendyta.com <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+        </div>
+        <div class="portfolio-mac hidden-xs">
+          <div class="mac-pic">
+            <img src="images/portfolio/trendyta_1.png" class="scroll-1">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+  <div class="modal-dialog modal-full" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel2">Euro Te</h2>
+      </div>
+      <div class="modal-body">
+        <p>E-commerce platform with custom WordPress web site. Helped with LAMP server administration, created the custom theme for the web-site, blog and e-commerce front-end.</p>
+        <p><strong>Key technologies:</strong> WordPress, Bootstrap, PHP, CodeIgniter, JQuery, AWS, Git</p>
+        <div>
+          <a href="http://oliviamedina.com/recibe-la-primavera-con-euro-te/" target="_blank" class="btn btn-success">oliviamedina.com <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+        </div>
+        <div class="portfolio-mac hidden-xs">
+          <div class="mac-pic">
+            <img src="images/portfolio/eurote_1.png" class="scroll-2">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
+  <div class="modal-dialog modal-full" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel3">KnowHow</h2>
+      </div>
+      <div class="modal-body">
+        <p>E-commerce platform made from ground up. With a backend service using sales data analytics, to improve seasonal-sale offers, top products, and key costumers.</p>
+        <p><strong>Key technologies:</strong> Angular, Bootstrap, Nginx, CodeIgniter, JQuery, AWS, SendGrid, D3</p>
+        <div>
+          <a href="https://itunes.apple.com/sa/app/knowhow/id950977586?mt=8" target="_blank" class="btn btn-success">KnowHow App <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+        </div>
+        <div class="portfolio-iphone hidden-xs">
+          <div class="mac-pic">
+            <img src="images/portfolio/knowhow_1.png" class="scroll-3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
+  <div class="modal-dialog modal-full" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel4">Amazen Infinity</h2>
+      </div>
+      <div class="modal-body">
+        <p>E-commerce platform made from ground up. With a backend service using sales data analytics, to improve seasonal-sale offers, top products, and key costumers.</p>
+        <p><strong>Key technologies:</strong> Angular, Bootstrap, Nginx, CodeIgniter, JQuery, AWS, SendGrid, D3</p>
+        <div>
+          <a href="https://www.trendyta.com" target="_blank" class="btn btn-success">trendyta.com <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+        </div>
+        <div class="portfolio-iphone-landscape">
+          <img src="images/portfolio/trendyta_1.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5">
+  <div class="modal-dialog modal-full" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel5">BPGurus</h2>
+      </div>
+      <div class="modal-body">
+        <p>E-commerce platform made from ground up. With a backend service using sales data analytics, to improve seasonal-sale offers, top products, and key costumers.</p>
+        <p><strong>Key technologies:</strong> Angular, Bootstrap, Nginx, CodeIgniter, JQuery, AWS, SendGrid, D3</p>
+        <div>
+          <a href="https://www.trendyta.com" target="_blank" class="btn btn-success">trendyta.com <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+        </div>
+        <div class="portfolio-mac">
+          <img src="images/portfolio/trendyta_1.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel6">
+  <div class="modal-dialog modal-full" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel6">Victoria147</h2>
+      </div>
+      <div class="modal-body">
+        <p>E-commerce platform made from ground up. With a backend service using sales data analytics, to improve seasonal-sale offers, top products, and key costumers.</p>
+        <p><strong>Key technologies:</strong> Angular, Bootstrap, Nginx, CodeIgniter, JQuery, AWS, SendGrid, D3</p>
+        <div>
+          <a href="https://www.trendyta.com" target="_blank" class="btn btn-success">trendyta.com <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+        </div>
+        <div class="portfolio-mac">
+          <img src="images/portfolio/trendyta_1.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--Footer-->
 
