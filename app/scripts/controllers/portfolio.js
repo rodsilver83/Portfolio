@@ -21,7 +21,7 @@ angular.module('portfolioApp')
       //Smooth scroll to viewport
       var target = $('[name=' + $scope.activeLink + ']');
       $('html, body').animate({
-        scrollTop: (target.offset().top - 40)
+        scrollTop: (target.offset().top - 35)
       }, 1500);
 
     };
@@ -270,7 +270,20 @@ angular.module('portfolioApp')
 // Check if it's time to start the animation.
     function checkAnimation() {
       chartBarCheckAnimation();
+      portfolioCheckAnimation();
       //contactBackgrounCheck();
+    }
+
+    function portfolioCheckAnimation(){
+      //Check Backgorund
+      var $elem = $('[name=portfolio]');
+      // If the animation has already been started
+      if ($('.portfolio-gallery').hasClass('start')) return;
+
+      if (isElementInViewport($elem)) {
+        // Start the animation
+        $('.portfolio-gallery').addClass('start');
+      }
     }
 
     function contactBackgrounCheck(){

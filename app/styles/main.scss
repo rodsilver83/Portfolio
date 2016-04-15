@@ -178,6 +178,8 @@ p {
   blockquote {
     p {
       @include single-text-shadow;
+      font-size: 2em;
+      line-height: 1.5em;
     }
   }
 }
@@ -189,6 +191,7 @@ blockquote.blockquote-reverse {
 
 cite {
   @include single-text-shadow;
+  font-size: 1.5em;
 }
 
 //Charts
@@ -435,8 +438,8 @@ ul#bar-chart-title-axis {
 
   .portfolio-gallery {
     margin-top: 50px;
-  }
-  .cell {
+  }.cell {
+    opacity: 0;
     height: 200px;
     margin: 15px 0px;
     background: $header-fg;
@@ -444,6 +447,10 @@ ul#bar-chart-title-axis {
     border: 1px solid darken($portfolio-cell-bg, 20%);
     padding: 20px;
     text-align: center;
+
+       @include transition-property(opacity);
+       @include transition-duration(2.5s);
+       @include transition-timing-function(ease);
 
     display: flex;
     align-items: center;
@@ -454,6 +461,10 @@ ul#bar-chart-title-axis {
     img {
       width: 150px;
     }
+  }
+
+  .portfolio-gallery.start .cell{
+    opacity: 1;
   }
 }
 
@@ -635,7 +646,6 @@ ul#bar-chart-title-axis {
 }
 
 //Responsive queries
-
 @media screen and (max-width: 768px) {
   .modal-dialog {
     width: auto;

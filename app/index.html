@@ -59,6 +59,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li ng-class="{ active: activeLink == 'Home'}" ng-click="go('home')"><a href="#/Home">Home</a></li>
           <li ng-class="{ active: activeLink == 'About'}" ng-click="go('about')"><a href="#/About">About</a></li>
+          <li ng-class="{ active: activeLink == 'Skills'}" ng-click="go('skills')"><a href="#/Skills">Skills</a></li>
           <li ng-class="{ active: activeLink == 'Portfolio'}" ng-click="go('portfolio')"><a ng-href="#/Portfolio">Portfolio</a></li>
           <li ng-class="{ active: activeLink == 'Contact'}" ng-click="go('contact')"><a ng-href="#/Contact">Contact</a></li>
         </ul>
@@ -126,18 +127,64 @@
     </div>
     <div class="col-xs-12 col-sm-6 meditation" ng-controller="QuotesCtrl">
       <h1 class="text-center title">QUOTES</h1>
-      <blockquote class="blockquote-reverse">
-        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis delectus distinctio
-          eaque facilis impedit iure laboriosam, maiores mollitia nulla numquam officia omnis quas quasi quis
-          reiciendis, repudiandae unde vero voluptas.
-        </p>
-        <cite>Source Title</cite>
-      </blockquote>
+
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <blockquote class="blockquote-reverse">
+              <p class="text-justify">"Try not to become a person of success, but rather try to become a person of value."
+              </p>
+              <cite> - Albert Einstein</cite>
+            </blockquote>
+          </div>
+
+          <div class="item">
+            <blockquote class="blockquote-reverse">
+              <p class="text-justify">
+                "Just because something doesn’t do what you planned it to do, doesn’t mean it’s useless."
+              </p>
+              <cite> – Thomas Edison</cite>
+            </blockquote>
+          </div>
+
+          <div class="item">
+            <blockquote class="blockquote-reverse">
+              <p class="text-justify">
+                "Never trust a computer you can't throw out a window."
+              </p>
+              <cite> – Steve Wozniak</cite>
+            </blockquote>
+          </div>
+
+          <div class="item">
+            <blockquote class="blockquote-reverse">
+              <p class="text-justify">
+                "I do not fear computers, I fear the lack of them."
+              </p>
+              <cite> – Isaac Asimov</cite>
+            </blockquote>
+          </div>
+
+          <div class="item">
+            <blockquote class="blockquote-reverse">
+              <p class="text-justify">
+                "Computers are useless. They can only give you answers."
+              </p>
+              <cite> – Pablo Picasso</cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
   <!-- MY SKILLS -->
   <div class="row">
+    <a name="skills"></a>
+
     <div class="col-xs-12 text-center charts visible-sm visible-md visible-lg">
       <h1 class="title">My Skills</h1>
       <div class="chart-container">
@@ -221,32 +268,32 @@
         <div class="portfolio-gallery">
           <div class="col-xs-6 col-sm-4 text-center">
             <div class="cell" data-toggle="modal" data-target="#modal1">
-              <img src="images/portfolio/logo/trendyta.png">
+              <img src="images/portfolio/logo_trendyta.png">
             </div>
           </div>
           <div class="col-xs-6 col-sm-4 text-center">
             <div class="cell" data-toggle="modal" data-target="#modal2">
-              <img src="images/portfolio/logo/eurote.png">
+              <img src="images/portfolio/logo_eurote.png">
             </div>
           </div>
           <div class="col-xs-6 col-sm-4 text-center">
             <div class="cell" data-toggle="modal" data-target="#modal3">
-              <img src="images/portfolio/logo/knowhow.png">
+              <img src="images/portfolio/logo_knowhow.png">
             </div>
           </div>
           <div class="col-xs-6 col-sm-4 text-center">
             <div class="cell" data-toggle="modal" data-target="#modal4" ng-click="modalAmzInf()">
-              <img src="images/portfolio/logo/amzinf.png">
+              <img src="images/portfolio/logo_amzinf.png">
             </div>
           </div>
           <div class="col-xs-6 col-sm-4 text-center">
             <div class="cell" data-toggle="modal" data-target="#modal5">
-              <img src="images/portfolio/logo/bpgurus.png">
+              <img src="images/portfolio/logo_bpgurus.png">
             </div>
           </div>
           <div class="col-xs-6 col-sm-4 text-center">
             <div class="cell" data-toggle="modal" data-target="#modal6">
-              <img src="images/portfolio/logo/v147.png">
+              <img src="images/portfolio/logo_v147.png">
             </div>
           </div>
         </div>
