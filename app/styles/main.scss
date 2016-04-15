@@ -29,7 +29,7 @@ $blockquote-border-color: $header-fg;
 
 $modal-content-bg: $header-fg;
 
-  // bower:scss
+// bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
@@ -55,11 +55,11 @@ $modal-content-bg: $header-fg;
   font-weight: normal;
 }
 
-*, body{
+*, body {
   font-family: "Quicksand";
 }
 
-h4{
+h4 {
   color: $dark-color;
 }
 
@@ -119,6 +119,8 @@ p {
 
 .main-desc {
   padding: 40px 0px 50px 0px;
+  max-width: 600px;
+  margin: auto;
 }
 
 .home-content {
@@ -138,7 +140,7 @@ p {
   color: $dark-color;
   padding: 0px 40px 40px 40px;
   height: $about-me-height;
-  border-bottom: lighten($header-fg,20%);
+  border-bottom: lighten($header-fg, 20%);
 }
 
 .title {
@@ -422,24 +424,24 @@ ul#bar-chart-title-axis {
 }
 
 //Portfolio
-.portfolio{
+.portfolio {
 
-  $portfolio-cell-bg: lighten($main-bg,35%);
+  $portfolio-cell-bg: lighten($main-bg, 35%);
 
-  border-top: 1px solid darken($portfolio-cell-bg,25%);
-  background: darken($portfolio-cell-bg,10%);
+  border-top: 1px solid darken($portfolio-cell-bg, 25%);
+  background: darken($portfolio-cell-bg, 10%);
   color: $header-fg;
   padding: 40px 0px;
 
-  .portfolio-gallery{
+  .portfolio-gallery {
     margin-top: 50px;
   }
-  .cell{
+  .cell {
     height: 200px;
     margin: 15px 0px;
     background: $header-fg;
     border-radius: 5px;
-    border: 1px solid darken($portfolio-cell-bg,20%);
+    border: 1px solid darken($portfolio-cell-bg, 20%);
     padding: 20px;
     text-align: center;
 
@@ -449,26 +451,26 @@ ul#bar-chart-title-axis {
 
     cursor: pointer;
 
-    img{
+    img {
       width: 150px;
     }
   }
 }
 
 //Modal
-.modal-title{
+.modal-title {
   color: $header-fg;
 }
 
-.modal-body{
+.modal-body {
   color: $dark-color;
 }
 
-.modal-header{
+.modal-header {
   background: $dark-color;
 }
 
-.modal-full{
+.modal-full {
   width: 90%;
 }
 
@@ -496,6 +498,14 @@ ul#bar-chart-title-axis {
     }
     img.scroll-2 {
       animation: scrolling-2 20s infinite;
+    }
+
+    img.scroll-5 {
+      animation: scrolling-5 20s infinite;
+    }
+
+    img.scroll-6 {
+      animation: scrolling-6 20s infinite;
     }
   }
 }
@@ -526,27 +536,15 @@ ul#bar-chart-title-axis {
 }
 
 .portfolio-iphone-landscape {
-  background: rgba(0, 0, 0, 0) url("/images/portfolio/iphone.png") no-repeat scroll 50% 50%;
+  background: rgba(0, 0, 0, 0) url("/images/portfolio/iphone_landscape.png") no-repeat scroll 50% 50%;
   display: flex;
-  height: 400px;
+  height: 250px;
   justify-content: center;
   width: 100%;
   margin-bottom: 30px;
 
-  .mac-pic {
-    height: 309px;
-    width: 175px;
-    overflow: hidden;
-    margin-top: 45px;
-
-    img {
-      width: 500%;
-      @include animation-timing-function(ease-in-out);
-      animation-play-state: paused;
-    }
-    img.scroll-3 {
-      animation: scrolling-3 40s infinite;
-    }
+  video {
+    width: 300px;
   }
 }
 
@@ -554,11 +552,23 @@ ul#bar-chart-title-axis {
   animation-play-state: running;
 }
 
-/*
-.in .mac-pic img:hover {
-  animation-play-state: paused;
+//Contact
+.contact{
+  padding: 40px 20px 0px;
+  min-height: 300px;
+  background: $header-fg;
+  color: $main-bg;
+
+  border-top: 1px solid lighten($main-bg,10%);
+
+  h1{
+    color: lighten($main-bg,10%);
+  }
 }
-*/
+
+.contact-list{
+  list-style: none;
+}
 
 //Animations
 @include keyframes(floating) {
@@ -588,20 +598,38 @@ ul#bar-chart-title-axis {
   }
 }
 
+@include keyframes(scrolling-5) {
+  0%, 20%, 100% {
+    margin-top: 0px;
+  }
+  50%, 70% {
+    margin-top: -645px;
+  }
+}
+
+@include keyframes(scrolling-6) {
+  0%, 20%, 100% {
+    margin-top: 0px;
+  }
+  50%, 70% {
+    margin-top: -460px;
+  }
+}
+
 @include keyframes(scrolling-3) {
-  0%, 5%, 100%{
+  0%, 5%, 100% {
     margin-left: 0px;
   }
-  10%, 15%, 90%, 95%{
+  10%, 15%, 90%, 95% {
     margin-left: -175px;
   }
-  20%, 25%, 80%, 85%{
+  20%, 25%, 80%, 85% {
     margin-left: -350px;
   }
-  30%, 35%, 70%, 75%{
+  30%, 35%, 70%, 75% {
     margin-left: -525px;
   }
-  40%, 60%{
+  40%, 60% {
     margin-left: -700px;
   }
 }
@@ -609,7 +637,7 @@ ul#bar-chart-title-axis {
 //Responsive queries
 
 @media screen and (max-width: 768px) {
-  .modal-dialog{
+  .modal-dialog {
     width: auto;
   }
 }

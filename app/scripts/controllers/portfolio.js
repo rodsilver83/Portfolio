@@ -18,13 +18,21 @@ angular.module('portfolioApp')
       //goAboutInterval = setInterval(speedParticlesX,24);
       //END_GRADIENT = "#ffffff";
 
+      //Smooth scroll to viewport
       var target = $('[name=' + $scope.activeLink + ']');
       $('html, body').animate({
         scrollTop: (target.offset().top - 40)
       }, 1500);
 
     };
-
+    
+    //Modal
+    $scope.modalAmzInf = function(){
+      var aiVideo = document.getElementById("amzinf-video");
+      aiVideo.play();
+    }
+    
+    //Main Canvas Animation
     var canvas = document.getElementById("canvas-element");
     resizeCanvas();
     var context = canvas.getContext("2d");
@@ -129,7 +137,7 @@ angular.module('portfolioApp')
 
     function frameUpdate(){
       context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      //fillCanvasGradient();
+      fillCanvasGradient();
       for( var i = 0; i < particles.length; i++ ) {
         particles[i].size = INIT_SIZE_DOT;
         particles[i].id = i;
@@ -240,4 +248,58 @@ angular.module('portfolioApp')
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
+
+
+    //SCROOLL VIEWPORT
+    // Returns true if the specified element has been scrolled into the viewport.
+    function isElementInViewport(elem) {
+      var $elem = $(elem);
+
+      // Get the scroll position of the page.
+      var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+      var viewportTop = $(scrollElem).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      // Get the position of the element on the page.
+      var elemTop = Math.round( $elem.offset().top );
+      var elemBottom = elemTop + $elem.height();
+
+      return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
+    }
+
+// Check if it's time to start the animation.
+    function checkAnimation() {
+      chartBarCheckAnimation();
+      //contactBackgrounCheck();
+    }
+
+    function contactBackgrounCheck(){
+      //Check Backgorund
+      var $elem = $('[name=portfolio]');
+      var $elem2 = $('[name=contact]');
+      // If the animation has already been started
+      if (END_GRADIENT == "#FFFFFF") return;
+
+      if (isElementInViewport($elem) || isElementInViewport($elem2)) {
+        // Start the animation
+        END_GRADIENT = "#FFFFFF";
+      }
+    }
+
+    function chartBarCheckAnimation(){
+      var $elem = $('#bar-chart-title-axis');
+
+      // If the animation has already been started
+      if ($('#bar-chart').hasClass('start')) return;
+
+      if (isElementInViewport($elem)) {
+        // Start the animation
+        $('#bar-chart').addClass('start');
+      }
+    }
+
+// Capture scroll events
+    $(window).scroll(function(){
+      checkAnimation();
+    });
   });
