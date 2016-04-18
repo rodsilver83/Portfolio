@@ -553,6 +553,7 @@ ul#bar-chart-title-axis {
   justify-content: center;
   width: 100%;
   margin-bottom: 30px;
+  padding-top: 40px;
 
   video {
     width: 300px;
@@ -566,7 +567,7 @@ ul#bar-chart-title-axis {
 //Contact
 .contact{
   padding: 40px 20px 0px;
-  min-height: 300px;
+  min-height: 400px;
   background: $header-fg;
   color: $main-bg;
 
@@ -646,9 +647,50 @@ ul#bar-chart-title-axis {
 }
 
 //Responsive queries
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .modal-dialog {
     width: auto;
+  }
+
+  h1{
+    font-size: 2.5em;
+  }
+
+  .about-me{
+    height: 700px;
+  }
+
+  .meditation {
+    height: 400px;
+    blockquote {
+      p {
+        @include single-text-shadow;
+        font-size: 1.5em;
+        line-height: 1em;
+      }
+    }
+  }
+
+  .portfolio {
+
+    $portfolio-cell-bg: lighten($main-bg, 35%);
+
+    border-top: 1px solid darken($portfolio-cell-bg, 25%);
+    background: darken($portfolio-cell-bg, 10%);
+    color: $header-fg;
+    padding: 40px 0px;
+
+    .portfolio-gallery {
+      margin-top: 50px;
+    }
+    .cell {
+      opacity: 0;
+      height: 100px;
+
+      img{
+        width: 75px;
+      }
+    }
   }
 }
 

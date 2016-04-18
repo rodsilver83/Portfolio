@@ -28,8 +28,9 @@ angular.module('portfolioApp')
     
     //Modal
     $scope.modalAmzInf = function(){
-      var aiVideo = document.getElementById("amzinf-video");
-      aiVideo.play();
+      //var aiVideo = document.getElementById("amzinf-video");
+      //aiVideo.play();
+      //console.log("VIDEO: ",aiVideo);
     }
     
     //Main Canvas Animation
@@ -276,7 +277,7 @@ angular.module('portfolioApp')
 
     function portfolioCheckAnimation(){
       //Check Backgorund
-      var $elem = $('[name=portfolio]');
+      var $elem = $('[name=portfolio-end]');
       // If the animation has already been started
       if ($('.portfolio-gallery').hasClass('start')) return;
 
