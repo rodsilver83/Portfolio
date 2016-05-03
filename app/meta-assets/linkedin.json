@@ -1,0 +1,12 @@
+{
+  "comment": "Rodrigo Soria - Full Stack Developer Personal Page",
+  "content": {
+    "title": "Rodrigo Soria Full Stack Developer",
+    "description": "I'm a Full Stack Developer with a designer in me. When I'm not freelancing, I'm playing videogames. I spend my free time creating new levels for my IOS game.",
+    "submitted-url": "http://rodrigosoria.me",
+    "submitted-image-url": "http://rodrigosoria.me/meta-assets/icon_R.png"
+  },
+  "visibility": {
+    "code": "anyone"
+  }
+}
