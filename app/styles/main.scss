@@ -170,10 +170,10 @@ p {
 }
 
 .meditation {
-  background: url("/images/about/quotes.jpg") no-repeat scroll 50% 50%;
-
+  background: url("/images/about/quotes2.jpg") no-repeat scroll 50% 50%;
   height: $about-me-height;
   padding: 0px 40px 40px 40px;
+  background-size: cover;
 
   blockquote {
     p {
